@@ -6,7 +6,7 @@ jobs:
       # - image: circleci/python:3.9.6-node
     steps:
       - checkout
-      - run: binary=$(which python)
+      # - run: binary=$(which python)
       - run:
           name: Install AWS Full Command Line (GET)
           command: curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
@@ -16,7 +16,7 @@ jobs:
       - run:
           name: Install AWS Full Command Line (Install)
           # command: binary=$(which python) && sudo $binary ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws && aws --version
-          command: sudo $binary ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws && aws --version
+          command: binary=$(which python) && sudo $binary ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws && aws --version
 
 workflows:
   version: 2
