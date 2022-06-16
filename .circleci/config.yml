@@ -1,6 +1,6 @@
 version: 2.1
 commands:
-  installAWSCLI:
+  install-aws-cli:
     description: "A command to install the AWS full command line"
     steps:
       - run:
@@ -28,7 +28,7 @@ jobs:
       # - run:
       #     name: Install AWS Full Command Line (Install)
       #     command: binary=$(which python) && sudo $binary ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws && aws --version
-      - installAWSCLI
+      - install-aws-cli
 
 workflows:
   version: 2
