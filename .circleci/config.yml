@@ -18,6 +18,7 @@ jobs:
       #     name: Install AWS Full Command Line (Install)
       #     command: sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws && aws --version
       - run: ls /usr/local/bin
+      - run: ls /usr/bin
       - run: echo $PATH
 
 workflows:
