@@ -1,0 +1,18 @@
+version: 2
+jobs:
+  test-image:
+    docker:
+      - image: cimg/python:3.8
+    steps:
+      - checkout
+      - run: python --version
+
+workflows:
+  version: 2
+  pipeline-test:
+    jobs:
+    - test-image:
+        filters:
+          branches:
+            only:
+            - master
