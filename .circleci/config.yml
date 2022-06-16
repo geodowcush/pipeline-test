@@ -2,7 +2,8 @@ version: 2
 jobs:
   test-image:
     docker:
-      - image: cimg/python:3.7.12-node
+      # - image: cimg/python:3.7.12-node
+      - image: circleci/python:3.9.6-node
     steps:
       - checkout
       - run: python --version
