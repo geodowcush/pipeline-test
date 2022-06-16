@@ -6,6 +6,17 @@ jobs:
     steps:
       - checkout
       - run: python --version
+      - run: which python
+      - run:
+          name: Install AWS Full Command Line (GET)
+          command: curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+      - run:
+          name: Install AWS Full Command Line (Unzip)
+          command: unzip awscli-bundle.zip
+      - run:
+          name: Install AWS Full Command Line (Install)
+          command: sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws && aws --version
+      - run: echo $PATH
 
 workflows:
   version: 2
