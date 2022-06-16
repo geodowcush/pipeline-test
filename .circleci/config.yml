@@ -2,7 +2,7 @@ version: 2
 jobs:
   test-image:
     docker:
-      - image: cimg/python:3.8
+      - image: cimg/python:3.7.12-node
     steps:
       - checkout
       - run: python --version
