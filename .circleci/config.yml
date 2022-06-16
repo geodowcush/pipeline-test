@@ -8,6 +8,7 @@ jobs:
       - checkout
       - run: python --version
       - run: which python
+      - run: sudo python --version
       - run:
           name: Install AWS Full Command Line (GET)
           command: curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
